@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 11
+addons:
+  packages:
+    - libgconf-2-4
+cache:
+  directories:
+    - ~/.cache
+script:
+  - eslint 'src/**'
+  - npm run test:coveralls
+notifications:
+  email: false
