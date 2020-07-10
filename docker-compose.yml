@@ -1,0 +1,32 @@
+version: '3'
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - '6379:6379'
+    volumes:
+      - /home/code/docker/volumes/redisdb:/data/db
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - /home/code/docker/volumes/mongodb:/data/db
+  postgres:
+    image: postgres:9.4
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    restart: always
+    ports:
+      - '5432:5432'
+    expose:
+      - 5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /tmp
+# volumes:
+#   data:
+#     external: true
+#   pgdata:
+#     driver: local
