@@ -9,6 +9,7 @@
     "start": "ts-node src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "test": "jest --passWithNoTests --no-cache --runInBand",
+    "test:staged": "npm test -- --findRelatedTests",
     "test:watch": "npm test -- --watchAll",
     "test:ci": "npm test -- --coverage",
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
