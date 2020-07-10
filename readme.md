@@ -1,12 +1,19 @@
 <p align="center">
+<a style="margin-left:10px;" href='https://travis-ci.com/wagnersantos/gobarber-back-end.svg?branch=master'><img src='https://travis-ci.com/wagnersantos/gobarber-back-end.svg?branch=master' alt='Coverage Status' /></a>
+<a href='https://coveralls.io/github/wagnersantos/gobarber-back-end?branch=master'><img src='https://coveralls.io/repos/github/wagnersantos/gobarber-back-end/badge.svg?branch=master' alt='Coverage Status' /></a>
+<a href="https://img.shields.io/badge/code%20style-Airbnb-brightgreen">
 <img style="margin-left:10px;" src="https://img.shields.io/badge/code%20style-Airbnb-brightgreen" />
-
+</a>
+<a href="https://img.shields.io/badge/license-MIT-green">
 <img style="margin-left:10px;" src="https://img.shields.io/badge/license-MIT-green" />
-
+</a>
+<a href="https://img.shields.io/github/wagnersantos/gobarber-back-end">
 <img style="margin-left:10px;" src="https://img.shields.io/github/languages/count/wagnersantos/gobarber-back-end" />
+</a>
 <a style="margin-left:10px;" href="https://opensource.org/"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" /></a>
-
+<a href="https://img.shields.io/github/wagnersantos/gobarber-back-end">
 <img style="margin-left:10px;" src="https://img.shields.io/github/package-json/v/wagnersantos/gobarber-back-end">
+</a>
 </p>
 
 # **GoBarber back-end**
