@@ -3,10 +3,10 @@
 
 <img style="margin-left:10px;" src="https://img.shields.io/badge/license-MIT-green" />
 
-<img style="margin-left:10px;" src="https://img.shields.io/github/languages/count/wagnersantos/4devs" />
+<img style="margin-left:10px;" src="https://img.shields.io/github/languages/count/wagnersantos/gobarber-back-end" />
 <a style="margin-left:10px;" href="https://opensource.org/"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" /></a>
 
-<img style="margin-left:10px;" src="https://img.shields.io/github/package-json/v/wagnersantos/4devs">
+<img style="margin-left:10px;" src="https://img.shields.io/github/package-json/v/wagnersantos/gobarber-back-end">
 </p>
 
 # **GoBarber back-end**
