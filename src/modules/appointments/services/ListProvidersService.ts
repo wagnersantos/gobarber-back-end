@@ -22,14 +22,17 @@ export default class ListProvidersService {
 
   public async execute({ userId }: IRequestDTO): Promise<User[]> {
     const cacheKey = `providers-list:${userId}`;
-    let users = await this.redisCacheProvider.recover<User[]>(cacheKey);
+    let users = (await this.redisCacheProvider.recover<User[]>(cacheKey)) || [];
 
-    if (!users) {
-      users = await this.usersRepository.findAllProviders({
-        exceptUserId: userId,
-      });
+    switch (users.length) {
+      case 0:
+        users = await this.usersRepository.findAllProviders({
+          exceptUserId: userId,
+        });
 
-      await this.redisCacheProvider.save(cacheKey, classToClass(users));
+        await this.redisCacheProvider.save(cacheKey, classToClass(users));
+        break;
+      default:
     }
 
     return users;
