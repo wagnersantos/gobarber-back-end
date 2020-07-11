@@ -29,21 +29,27 @@ export default class ListProviderAppointmentsService {
     year,
   }: IRequestDTO): Promise<Appointment[]> {
     const cacheKey = `provider-appointments:${providerId}:${year}-${month}-${day}`;
-    let appointments = await this.redisCacheProvider.recover<Appointment[]>(
-      cacheKey,
-    );
+    let appointments =
+      (await this.redisCacheProvider.recover<Appointment[]>(cacheKey)) || [];
 
-    if (!appointments) {
-      appointments = await this.appointmentsRepository.findAllInDayFromProvider(
-        {
-          providerId,
-          day,
-          month,
-          year,
-        },
-      );
+    switch (appointments.length) {
+      case 0:
+        appointments = await this.appointmentsRepository.findAllInDayFromProvider(
+          {
+            providerId,
+            day,
+            month,
+            year,
+          },
+        );
 
-      await this.redisCacheProvider.save(cacheKey, classToClass(appointments));
+        await this.redisCacheProvider.save(
+          cacheKey,
+          classToClass(appointments),
+        );
+
+        break;
+      default:
     }
 
     return appointments;
